@@ -5,9 +5,12 @@
   extractValues({a: 1, b: 2, c: 3}) debería retornar [1, 2, 3]
 */
 
-function extractValues(data) {
-  z
+function extractValues(obj) {
+  return Object.values(obj);
 }
+
+var objeto = {a: 1, b: 2, c: 3};
+var valores = extractValues(objeto);
 
 /*  
   Ejercicio 2: 
@@ -17,9 +20,17 @@ function extractValues(data) {
   arrayToLengthCounters(['gato', 'perro', 'elefante']) debería retornar {gato: 4, perro: 5, elefante: 8}
 */
 
-function arrayToLengthCounters(array) {
-  // Tu código aquí
+function arrayToLengthCounters(arr) {
+  var result = {};
+  for (var i = 0; i < arr.length; i++) {
+    var element = arr[i];
+    result[element] = element.length;
+  }
+  return result;
 }
+
+var array = ['gato', 'perro', 'elefante'];
+var counters = arrayToLengthCounters(array);
 
 /*  
   Ejercicio 3: 
@@ -29,9 +40,18 @@ function arrayToLengthCounters(array) {
   findKeysInCommon({a: 1, b: 2, c: 3}, {b: 4, c: 5, d: 6}) debería retornar ['b', 'c']
 */
 
-function findKeysInCommon(objeto1, objeto2) {
-  // Tu código aquí
+function findKeysInCommon(obj1, obj2) {
+  var keysObj1 = Object.keys(obj1);
+  var commonKeys = keysObj1.filter(function(key) {
+    return obj2.hasOwnProperty(key);
+  });
+  return commonKeys;
 }
+
+var objeto1 = {a: 1, b: 2, c: 3};
+var objeto2 = {b: 4, c: 5, d: 6};
+var keysComunes = findKeysInCommon(objeto1, objeto2);
+
 
 // Llamamos a las funciones y mostramos los resultados
 
