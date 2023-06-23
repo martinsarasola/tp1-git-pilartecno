@@ -5,9 +5,12 @@
   extractValues({a: 1, b: 2, c: 3}) debería retornar [1, 2, 3]
 */
 
-function extractValues(data) {
-  z
+function extractValues(obj) {
+  return Object.values(obj);
 }
+
+var objeto = {a: 1, b: 2, c: 3};
+var valores = extractValues(objeto);
 
 /*  
   Ejercicio 2: 
