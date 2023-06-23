@@ -40,9 +40,18 @@ var counters = arrayToLengthCounters(array);
   findKeysInCommon({a: 1, b: 2, c: 3}, {b: 4, c: 5, d: 6}) debería retornar ['b', 'c']
 */
 
-function findKeysInCommon(objeto1, objeto2) {
-  // Tu código aquí
+function findKeysInCommon(obj1, obj2) {
+  var keysObj1 = Object.keys(obj1);
+  var commonKeys = keysObj1.filter(function(key) {
+    return obj2.hasOwnProperty(key);
+  });
+  return commonKeys;
 }
+
+var objeto1 = {a: 1, b: 2, c: 3};
+var objeto2 = {b: 4, c: 5, d: 6};
+var keysComunes = findKeysInCommon(objeto1, objeto2);
+
 
 // Llamamos a las funciones y mostramos los resultados
 
