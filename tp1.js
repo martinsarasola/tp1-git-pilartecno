@@ -20,9 +20,17 @@ var valores = extractValues(objeto);
   arrayToLengthCounters(['gato', 'perro', 'elefante']) debería retornar {gato: 4, perro: 5, elefante: 8}
 */
 
-function arrayToLengthCounters(array) {
-  // Tu código aquí
+function arrayToLengthCounters(arr) {
+  var result = {};
+  for (var i = 0; i < arr.length; i++) {
+    var element = arr[i];
+    result[element] = element.length;
+  }
+  return result;
 }
+
+var array = ['gato', 'perro', 'elefante'];
+var counters = arrayToLengthCounters(array);
 
 /*  
   Ejercicio 3: 
